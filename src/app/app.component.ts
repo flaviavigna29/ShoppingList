@@ -1,14 +1,15 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { TabsComponent } from './shared/tabs/tabs.component';
+
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [
+    TabsComponent
+  ],
   template: `
-    <h1>Welcome to {{title}}!</h1>
-
-    <router-outlet />
+<app-tabs></app-tabs>
   `,
   styles: [],
 })
