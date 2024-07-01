@@ -23,15 +23,18 @@ import { CommonModule } from '@angular/common';
     <!-- contatore prodotti -->
     <div class="w-full md:w-2/5 mx-auto my-5">
       <div class="flex justify-between">
-        <button class="btn lg:btn-wide">Completati
-          <div class="badge badge-accent">{{completedProducts()}}</div>
+        <button class="btn lg:btn-wide">
+          Completati
+          <div class="badge badge-accent">{{ completedProducts() }}</div>
         </button>
-        <button class="btn lg:btn-wide">Da comprare
-          <div class="badge">{{todoProducts()}}</div>
+        <button class="btn lg:btn-wide">
+          Da comprare
+          <div class="badge">{{ todoProducts() }}</div>
         </button>
       </div>
     </div>
 
+    @defer (when products().length > 0) {
     <!-- lista prodotti -->
     <div class="w-full md:w-2/5 mx-auto border border-neutral rounded-lg">
       @for (product of products(); track product.id) {
@@ -74,6 +77,11 @@ import { CommonModule } from '@angular/common';
       </div>
       }
     </div>
+    } @placeholder {
+    <div class="w-full md:w-2/5 mx-auto my-4">
+      <div class="skeleton h-32 w-full"></div>
+    </div>
+    }
   `,
   styles: ``,
 })
