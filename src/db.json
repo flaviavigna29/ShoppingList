@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Apple",
+      "completed": true
+    },
+    {
+      "id": "2",
+      "name": "Banana",
+      "completed": true
+    },
+    {
+      "id": "3",
+      "name": "Carrot",
+      "completed": true
+    },
+    {
+      "id": "4",
+      "name": "Date",
+      "completed": true
+    },
+    {
+      "id": "5",
+      "name": "Eggplant",
+      "completed": true
+    }
+  ]
+}

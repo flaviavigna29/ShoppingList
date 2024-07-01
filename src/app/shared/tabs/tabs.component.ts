@@ -1,24 +1,42 @@
 import { Component } from '@angular/core';
+import { HomeComponent } from '../../home/home.component';
+import { CommonModule } from '@angular/common';
+import { ProductsToBuyComponent } from '../../products-to-buy/products-to-buy.component';
 
 @Component({
   selector: 'app-tabs',
   standalone: true,
-  imports: [],
+  imports: [ 
+    CommonModule,
+    HomeComponent,
+    ProductsToBuyComponent
+  ],
   template: `
     <div class="w-full">
       <div class="flex justify-center">
-        <button class="btn sm:btn-sm md:btn-md lg:btn-lg">Home</button>
-        <button class="btn sm:btn-sm md:btn-md lg:btn-lg">
-          Product To Buy
+        <button class="btn sm:btn-sm md:btn-md lg:btn-lg" [ngClass]="{'btn-neutral': tab==1}" (click)="tab = 1">
+          Home
+        </button>
+        <button class="btn sm:btn-sm md:btn-md lg:btn-lg" [ngClass]="{'btn-neutral': tab==2}" (click)="tab = 2">
+          Products To Buy
         </button>
       </div>
     </div>
 
     <div class="contents">
-      <div class="py-10 px-6">TAB 1</div>
-      <div class="py-10 px-6">TAB 2</div>
+      @if (tab === 1) {
+      <div class="py-10 px-6">
+        <app-home/>
+      </div>
+      } @else {
+      <div class="py-10 px-6">
+        <app-products-to-buy/>
+      </div>
+      }
     </div>
   `,
   styles: ``,
 })
-export class TabsComponent {}
+export class TabsComponent {
+  tab: number = 1;
+}
