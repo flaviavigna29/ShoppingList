@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { TabsComponent } from './shared/tabs/tabs.component';
 
-
 @Component({
   selector: 'app-root',
   standalone: true,

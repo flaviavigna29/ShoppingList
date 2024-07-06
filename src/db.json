@@ -13,17 +13,17 @@
     {
       "id": "3",
       "name": "Carrot",
-      "completed": true
+      "completed": false
     },
     {
       "id": "4",
       "name": "Date",
-      "completed": true
+      "completed": false
     },
     {
       "id": "5",
       "name": "Eggplant",
-      "completed": true
+      "completed": false
     }
   ]
 }
